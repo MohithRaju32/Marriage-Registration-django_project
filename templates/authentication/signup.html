@@ -1,0 +1,106 @@
+
+<head>
+      <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+      <style type="text/css">
+    . form-row{
+      margin: 50px;
+
+    }
+    .container {
+  height: 200px;
+  position: relative;
+
+}
+
+   h1 {
+      color: black;
+       text-align: center;
+      font-family: sans-serif;
+      margin: 50px;
+    }
+      label{
+      font-family: sans-serif;
+      font-size:18px;
+      font-style:italic;
+    }
+    div{
+           text-align: center;
+
+        }
+     submit{
+     text-align: center;
+     }
+
+
+    </style>
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'image/style.css' %}">
+<body style="background-image:url('{% static 'image/log5.jpg' %}'); background-repeat: no-repeat; background-size: 200%;">
+
+<table border="0" width="100%" height="300px">
+
+<h1><strong>PLEASE FILL THE VALID CREDENTIALS.. </strong></h1>
+
+<br><br><br>
+
+<form method="POST" autocomplete="off" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Create a username(only letters and numbers")Required>
+      </div>
+       <div class="form-group col-md-6">
+          <label for="">Email address</label>
+        <input type="email" id="email" name="email" placeholder="Enter your Email Address" cols="60" rows="15" Required>
+        </div>
+    </div>
+    <div class="form-row">
+   <div class="form-group col-md-6">
+        <label for="">First Name</label>
+          <input type="text" id="fname" name="fname" placeholder="Enter your First Name"Required>
+      </div>
+        <div class="form-group col-md-6">
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="lname" placeholder="Enter your Last Name"Required>
+        </div>
+      </div>
+
+     <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="">Password</label>
+       <input type="password" id="pass1" name="pass1" placeholder="Enter the Password"Required>
+      </div>
+      <div class="form-group col-md-6">
+
+        <label for="">Confirm your password</label>
+        <input type="password" id="pass2" name="pass2" placeholder="Confirm your Password"Required>
+
+
+      </div>
+    </div>
+
+
+
+
+  <tr>
+
+      <div class="container">
+  <div class="vertical-center">
+    <button type="submit" class="btn btn-primary">Sign Up</button>
+  </div>
+      </div>
+    </th>
+    </tr>
+
+
+
+</form>
+</table>
